@@ -1,0 +1,24 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+
+  app:
+    build: .
+    expose:
+      - "3000"
+    volumes:
+      - caseflow_data:/app/data
+    environment:
+      - NODE_ENV=production
+      - SESSION_SECRET=caseflow-lab-session-secret-change-in-prod-32chars!!
+      - LAB_FLAG=mgsy.dev{innerHTML_4lw4ys_l1es}
+      - LLAMA_HOST=http://127.0.0.1:8080
+
+volumes:
+  caseflow_data:
