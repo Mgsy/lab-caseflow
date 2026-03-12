@@ -1,4 +1,5 @@
 # Caseflow
+A hands-on lab for practicing the vulnerability chain described in [From self-XSS, through AI, to tenant takeover](https://mgsy.dev/en/posts/xss-prompt-injection/)
 
 > First startup downloads an AI model (~400MB) and bootstraps two tenants. Expect 2-5 minutes before the app is fully ready.
 
